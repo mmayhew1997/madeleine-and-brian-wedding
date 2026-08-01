@@ -14,7 +14,7 @@ function SectionHeading({
   return (
     <div className="mb-10 text-center">
       <div className="mb-8 flex justify-center text-sage/80">
-        <Squiggle loops={16} className="h-7 w-[22rem] sm:w-[44rem]" />
+        <Squiggle loops={16} className="h-7 w-64 max-w-[85vw] sm:w-[44rem]" />
       </div>
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       <h2 className="label-caps text-2xl text-sage sm:text-3xl">{title}</h2>
@@ -178,25 +178,27 @@ export default function Home() {
         className="relative flex min-h-screen items-center justify-center overflow-hidden bg-sage px-4 py-20"
       >
         <div className="relative mx-auto w-full max-w-7xl">
-          {/* Ornamental save-the-date frame — only wide enough screens show it */}
+          {/* Landscape save-the-date frame — kept for every viewport where it still
+              looks right; below ~600px the frame is dropped and the names stand alone
+              on the green (the save-the-date shape is too wide to read on a phone). */}
           <Image
             src="/std-frame-cream.png"
             alt="Madeleine and Brian — save the date — June 5, 2027, Napa Valley"
             width={1582}
             height={853}
             priority
-            className="hidden h-auto w-full lg:block"
+            className="hidden h-auto w-full min-[520px]:block"
           />
-          {/* Names: centered over the frame on lg+, a clean scaled banner below lg */}
-          <div className="flex flex-col items-center justify-center py-10 text-center lg:absolute lg:inset-0 lg:py-0">
-            <h1 className="display-caps text-[clamp(1.75rem,9vw,5.5rem)] leading-[1.12] text-ivory lg:text-7xl xl:text-8xl">
+          {/* Names — centered in the oval when the frame shows, standalone on green below */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+            <h1 className="display-caps leading-[1.12] text-ivory text-[clamp(2rem,11vw,2.75rem)] min-[520px]:text-[clamp(2rem,7vw,7rem)]">
               Madeleine
-              <span className="my-1 block text-[clamp(1rem,4vw,3rem)] font-light lg:text-4xl xl:text-5xl">
+              <span className="my-1 block font-light text-[clamp(1rem,5vw,1.35rem)] min-[520px]:text-[clamp(1.1rem,3.4vw,3.25rem)]">
                 &amp;
               </span>
               Brian
             </h1>
-            <p className="label-caps mt-7 text-[clamp(0.6rem,2.8vw,1rem)] text-ivory/80 lg:absolute lg:inset-x-0 lg:bottom-[22%] lg:mt-0 lg:text-sm xl:text-base">
+            <p className="label-caps mt-4 text-ivory/80 text-[clamp(0.58rem,2.4vw,0.8rem)] min-[520px]:mt-5 min-[520px]:text-[clamp(0.68rem,1.5vw,1.05rem)]">
               June 5, 2027&nbsp;&nbsp;·&nbsp;&nbsp;Napa Valley
             </p>
           </div>
