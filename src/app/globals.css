@@ -35,7 +35,7 @@
 }
 
 html {
-  font-size: 18px; /* scale the whole design up proportionally for readability */
+  font-size: 16px; /* standard web base; hero names are vw-driven so they stay large */
   scroll-behavior: smooth;
   /* offset anchor jumps to exactly the sticky nav height so you land on the
      next section's background (no sliver of the previous section peeking in) */
