@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  ─────────────────────────────────────────────────────────────
+  Madeleine & Brian — Design System
+  Grown from the save-the-date: soft sage green + ivory white,
+  black hand-drawn line art, and cheerful daisy-yellow accents.
+  Whimsical, warm, personal — elegant but not stuffy.
+  ─────────────────────────────────────────────────────────────
+*/
+
+@theme {
+  /* Brand colors */
+  --color-ivory: #fbfaf3; /* warm white — page base */
+  --color-cream: #f4f1e4; /* soft panels */
+
+  --color-sage: #7b9143; /* exact Abigail & Samuel green (rgb 123 145 67) */
+  --color-sage-soft: #dde3c4; /* lighter wash */
+  --color-sage-deep: #97a06f; /* mid green */
+  --color-olive: #7c8551; /* primary section green (à la the reference site) */
+  --color-moss: #5c6642; /* deep green — footer, buttons */
+
+  --color-daisy: #eac645; /* daisy-yellow accent */
+  --color-daisy-soft: #f6ead0; /* pale butter */
+
+  --color-clay: #a9663f; /* warm terracotta — used sparingly for errors */
+
+  --color-ink: #26251f; /* near-black — line art + text */
+  --color-stone: #6f6d5f; /* muted secondary text */
+  --color-mist: #cfd0bd; /* hairlines / borders */
+
+  /* Fonts (wired up in layout.tsx) */
+  --font-script: var(--font-script), "Segoe Script", cursive;
+  --font-body: var(--font-body), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: 18px; /* scale the whole design up proportionally for readability */
+  scroll-behavior: smooth;
+  /* offset anchor jumps to exactly the sticky nav height so you land on the
+     next section's background (no sliver of the previous section peeking in) */
+  scroll-padding-top: 3.5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-sage);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ── Type helpers ───────────────────────────────────────────── */
+
+/* Elegant engraved caps — the primary display treatment (names + headings) */
+/* Clean geometric caps — the primary display treatment (Option B) */
+.display-caps {
+  font-family: var(--font-body);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  line-height: 1.15;
+}
+
+/* Playful handwritten script — kept for a single signature accent */
+.script {
+  font-family: var(--font-script);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+/* Spaced sans caps — the "PLEASE SAVE THE DATE" label style */
+.label-caps {
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+/* Section eyebrow */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  color: var(--color-sage);
+}
+
+/* ── Section rhythm ─────────────────────────────────────────── */
+/* One standard gap between a background-color change and its text. */
+.section {
+  padding-block: clamp(1.25rem, 2.25vw, 1.75rem);
+}
+
+/* A subtle paper-ish texture flourish for sage panels */
+.panel-sage {
+  background-color: var(--color-sage-soft);
 }
