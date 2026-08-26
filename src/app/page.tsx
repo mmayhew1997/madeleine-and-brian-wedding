@@ -135,7 +135,6 @@ const THINGS = [
       "Oakville Grocery",
       "Farmstead at Long Meadow Ranch",
       "Sam's General Store",
-      "Model Bakery",
       "Ray-Ray's Tacos",
       "Mercato del Gusto",
       "Bouchon Bakery Yountville",
@@ -327,8 +326,27 @@ export default function Home() {
               <p className="mx-auto mt-4 max-w-md text-lg text-sage">
                 Keep the celebration going.
               </p>
-              <p className="mt-6 text-lg font-medium text-sage">
-                Location TBD, but likely in St. Helena
+
+              <div className="mx-auto mt-6 max-w-sm">
+                <Image
+                  src="/photos/anas-green.png"
+                  alt="Hand-drawn illustration of the bar at Ana's Cantina in St. Helena, California"
+                  width={1107}
+                  height={941}
+                  className="w-full"
+                />
+              </div>
+
+              <p className="mt-6 text-lg font-medium text-sage">Ana&rsquo;s Cantina</p>
+              <p className="text-lg">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ana%27s+Cantina+1205+Main+St+St+Helena+CA+94574"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sage underline decoration-sage/25 underline-offset-4 transition hover:text-sage hover:decoration-sage"
+                >
+                  1205 Main St, St. Helena, CA 94574
+                </a>
               </p>
             </article>
           </div>
