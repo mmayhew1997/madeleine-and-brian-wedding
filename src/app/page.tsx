@@ -121,7 +121,8 @@ const STAY_LINKS: Record<string, string> = {
   "Indian Springs": "https://www.indianspringscalistoga.com/",
   Solage: "https://auberge.com/solage/",
   // Downtown Napa
-  "Hotel Indigo Napa Valley": "https://www.hotelindigonapa.com/",
+  "Hotel Indigo Napa Valley":
+    "https://www.ihg.com/hotelindigo/hotels/us/en/napa-california/sfonv/hoteldetail",
   "Hampton Inn & Suites":
     "https://www.hilton.com/en/hotels/apcighx-hampton-suites-napa/",
   Airbnb: "https://www.airbnb.com/s/Napa-Valley--California/homes",
